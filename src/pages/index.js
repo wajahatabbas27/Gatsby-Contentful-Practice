@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby'
 import React from 'react'
+//import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const index = ({ data }) => {
 
@@ -12,9 +13,11 @@ const index = ({ data }) => {
       <div><h1>{data.allContentfulBlogPost.edges[0].node.publishDate}</h1></div>
       <div><h1>{data.allContentfulBlogPost.edges[1].node.title}</h1></div>
       <div><h1>{data.allContentfulBlogPost.edges[1].node.publishDate}</h1></div>
-      <div>{data.allContentfulBlogPost.edges[0].node.body.raw}</div>
+      { //Rich text ke liye hai yh 
+      /**  <div>{documentToReactComponents(data.allContentfulBlogPost.edges[0].node.body.raw)}</div>
       <br />
-      <div>{data.allContentfulBlogPost.edges[1].node.body.raw}</div>
+      <div>{documentToReactComponents(data.allContentfulBlogPost.edges[1].node.body.raw)}</div>
+  */}
     </div>
   )
 }
